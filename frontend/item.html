@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Details &mdash; Campus Lost &amp; Found</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <a href="index.html" class="site-title">
+        Campus Lost <span class="amp">&amp;</span> Found
+      </a>
+      <p class="site-tagline">Reuniting students with their stuff since day one.</p>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="report.html" class="nav-link">Report an Item</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="detail-section" aria-label="Item details">
+
+      <a href="index.html" class="back-link">&larr; Back to all items</a>
+
+      <div id="loading-message" class="loading-message">Loading item...</div>
+
+      <div id="item-detail" class="item-detail" hidden>
+
+        <div class="detail-header">
+          <h1 id="detail-name" class="detail-name"></h1>
+          <span id="detail-type" class="badge"></span>
+        </div>
+
+        <dl class="detail-list">
+          <div class="detail-row">
+            <dt>Category</dt>
+            <dd id="detail-category"></dd>
+          </div>
+          <div class="detail-row">
+            <dt>Location</dt>
+            <dd id="detail-location"></dd>
+          </div>
+          <div class="detail-row">
+            <dt>Date</dt>
+            <dd id="detail-date"></dd>
+          </div>
+          <div class="detail-row">
+            <dt>Description</dt>
+            <dd id="detail-description"></dd>
+          </div>
+          <div class="detail-row">
+            <dt>Contact</dt>
+            <dd id="detail-contact"></dd>
+          </div>
+          <div class="detail-row">
+            <dt>Status</dt>
+            <dd id="detail-status"></dd>
+          </div>
+        </dl>
+
+        <div class="detail-actions">
+          <button id="resolve-button" type="button" class="resolve-button">Mark as Resolved</button>
+          <button id="delete-button" type="button" class="delete-button">Delete Item</button>
+        </div>
+
+        <div id="action-message" class="form-message" role="status" hidden></div>
+
+      </div>
+
+      <div id="not-found-message" class="empty-state" hidden>
+        <p class="empty-state-title">Item not found.</p>
+        <p class="empty-state-text">This item may have already been removed.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Campus Lost &amp; Found &mdash; a student project.</p>
+  </footer>
+
+  <script src="js/item.js"></script>
+</body>
+</html>

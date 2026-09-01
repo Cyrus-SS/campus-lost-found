@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report an Item &mdash; Campus Lost &amp; Found</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <a href="index.html" class="site-title">
+        Campus Lost <span class="amp">&amp;</span> Found
+      </a>
+      <p class="site-tagline">Reuniting students with their stuff since day one.</p>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="report.html" class="nav-link active">Report an Item</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="form-section" aria-label="Report a lost or found item">
+      <h1 class="form-title">Report an Item</h1>
+      <p class="form-subtitle">Fill in as much detail as you can &mdash; it makes it easier for someone to recognize their item.</p>
+
+      <form id="report-form" class="item-form" novalidate>
+
+        <div class="form-field">
+          <label for="itemName">Item name</label>
+          <input type="text" id="itemName" name="itemName" placeholder="e.g. Blue water bottle" required>
+        </div>
+
+        <div class="form-field">
+          <label for="type">Is it lost or found?</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="category">Category</label>
+          <input type="text" id="category" name="category" placeholder="e.g. Electronics, Bag, ID Card" required>
+        </div>
+
+        <div class="form-field">
+          <label for="location">Campus location</label>
+          <input type="text" id="location" name="location" placeholder="e.g. Library, 2nd Floor" required>
+        </div>
+
+        <div class="form-field">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-field">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4" placeholder="Any details that could help identify it..." required></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="contactInfo">Contact info <span class="optional-tag">(optional)</span></label>
+          <input type="text" id="contactInfo" name="contactInfo" placeholder="Email or phone number">
+        </div>
+
+        <div id="form-message" class="form-message" role="status" hidden></div>
+
+        <div class="form-actions">
+          <button type="submit" class="submit-button">Submit Report</button>
+          <a href="index.html" class="cancel-link">Cancel</a>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Campus Lost &amp; Found &mdash; a student project.</p>
+  </footer>
+
+  <script src="js/report.js"></script>
+</body>
+</html>

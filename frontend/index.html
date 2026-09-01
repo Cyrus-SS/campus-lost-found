@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Lost &amp; Found</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <a href="index.html" class="site-title">
+        Campus Lost <span class="amp">&amp;</span> Found
+      </a>
+      <p class="site-tagline">Reuniting students with their stuff since day one.</p>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="report.html" class="nav-link">Report an Item</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+
+    <section class="toolbar" aria-label="Search and filter items">
+      <form class="search-form" role="search" id="search-form">
+        <label for="search-input" class="visually-hidden">Search items</label>
+        <input
+          type="search"
+          id="search-input"
+          name="search"
+          placeholder="Search by item name, location, or category..."
+          autocomplete="off"
+        >
+        <button type="submit" class="search-button">Search</button>
+      </form>
+
+      <div class="filter-group" role="group" aria-label="Filter by status">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="lost">Lost</button>
+        <button type="button" class="filter-btn" data-filter="found">Found</button>
+      </div>
+
+      <a href="report.html" class="report-button">+ Report an Item</a>
+    </section>
+
+    <section class="items-section" aria-label="Reported items">
+      <div id="items-grid" class="items-grid">
+      </div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <p class="empty-state-title">Nothing here yet.</p>
+        <p class="empty-state-text">No lost or found items match your search. Try a different keyword, or be the first to report one.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Campus Lost &amp; Found &mdash; a student project.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

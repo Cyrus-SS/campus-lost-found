@@ -1,0 +1,16 @@
+{
+  "name": "campus-lost-found-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Campus Lost & Found application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "mongodb": "^7.6.0",
+    "mongoose": "^8.24.4"
+  }
+}
