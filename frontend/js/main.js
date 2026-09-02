@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/items';
+const API_URL = 'http://54.159.93.13:5000/api/items';
 
 const itemsGrid = document.getElementById('items-grid');
 const emptyState = document.getElementById('empty-state');
