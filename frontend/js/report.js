@@ -1,4 +1,4 @@
-const API_URL = 'http://3.120.130.136:5000/api/items';
+const API_URL = 'http://3.220.130.136:5000/api/items';
 
 const reportForm = document.getElementById('report-form');
 const formMessage = document.getElementById('form-message');
