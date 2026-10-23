@@ -1,3 +1,4 @@
+const { authenticate, requireRole } = require('../middleware/auth');
 const express = require('express');
 const router = express.Router();
 const {
@@ -17,10 +18,8 @@ router.get('/', getAllItems);
 // GET /api/items/:id - Get a single item by ID
 router.get('/:id', getItemById);
 
-// PUT /api/items/:id - Update an item by ID
-router.put('/:id', updateItem);
+router.put('/:id', authenticate, requireRole('staff'), updateItem);
 
-// DELETE /api/items/:id - Delete an item by ID
-router.delete('/:id', deleteItem);
+router.delete('/:id', authenticate, requireRole('staff'), deleteItem);
 
 module.exports = router;

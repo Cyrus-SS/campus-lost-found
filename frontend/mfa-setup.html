@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set up MFA &mdash; Campus Lost &amp; Found</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="index.html" class="site-title">Campus Lost <span class="amp">&amp;</span> Found</a>
+    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="login.html" class="nav-link">Login</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="form-section">
+      <h1 class="form-title">Set up two-factor authentication</h1>
+      <p class="form-subtitle">Scan the QR code with Google or Microsoft Authenticator, then enter the 6-digit code.</p>
+
+      <div class="form-actions">
+        <button id="setup-btn" class="submit-button" type="button">Generate QR code</button>
+      </div>
+
+      <img id="qr" alt="MFA QR code" style="display:none; margin:1rem 0; max-width:220px">
+
+      <div class="form-field" id="confirm-field" style="display:none">
+        <label for="code">Code from the app</label>
+        <input type="text" id="code" inputmode="numeric" maxlength="6">
+        <div class="form-actions">
+          <button id="confirm-btn" class="submit-button" type="button">Confirm</button>
+        </div>
+      </div>
+
+      <div id="form-message" class="form-message" role="status" hidden></div>
+    </section>
+  </main>
+
+  <script src="js/mfa-setup.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login &mdash; Campus Lost &amp; Found</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+      <a href="index.html" class="site-title">
+        Campus Lost <span class="amp">&amp;</span> Found
+      </a>
+      <p class="site-tagline">Reuniting students with their stuff since day one.</p>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="report.html" class="nav-link">Report an Item</a>
+      <a href="login.html" class="nav-link active">Login</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="form-section" aria-label="Login">
+      <h1 class="form-title">Login</h1>
+      <p class="form-subtitle">Sign in to report items or manage reports.</p>
+
+      <form id="login-form" class="item-form" novalidate>
+
+        <div class="form-field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-field" id="code-field" style="display:none">
+          <label for="code">Authenticator code</label>
+          <input type="text" id="code" name="code" inputmode="numeric" maxlength="6" autocomplete="one-time-code">
+        </div>
+
+        <div id="form-message" class="form-message" role="status" hidden></div>
+
+        <div class="form-actions">
+          <button type="submit" class="submit-button">Login</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Campus Lost &amp; Found &mdash; a student project.</p>
+  </footer>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
