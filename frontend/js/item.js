@@ -1,4 +1,4 @@
-const API_URL = 'http://3.220.130.136:5000/api/items';
+const API_URL = 'http://localhost:8088/api/items';
 
 const params = new URLSearchParams(window.location.search);
 const itemId = params.get('id');
@@ -11,6 +11,13 @@ const resolveButton = document.getElementById('resolve-button');
 const deleteButton = document.getElementById('delete-button');
 
 let currentItem = null;
+
+function authHeaders() {
+  const headers = { 'Content-Type': 'application/json' };
+  const token = sessionStorage.getItem('token');
+  if (token) headers['Authorization'] = 'Bearer ' + token;
+  return headers;
+}
 
 async function fetchItem() {
   if (!itemId) {
@@ -30,6 +37,7 @@ async function fetchItem() {
     renderItem(currentItem);
 
   } catch (error) {
+    console.error('fetchItem failed:', error);
     showNotFound();
   }
 }
@@ -66,14 +74,13 @@ resolveButton.addEventListener('click', async () => {
   try {
     const response = await fetch(`${API_URL}/${itemId}`, {
       method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: authHeaders(),
       body: JSON.stringify({ status: 'resolved' })
     });
 
     if (!response.ok) {
-      throw new Error('Could not update item.');
+      const data = await response.json();
+      throw new Error(data.message || 'Could not update item.');
     }
 
     currentItem = await response.json();
@@ -91,11 +98,13 @@ deleteButton.addEventListener('click', async () => {
 
   try {
     const response = await fetch(`${API_URL}/${itemId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: authHeaders()
     });
 
     if (!response.ok) {
-      throw new Error('Could not delete item.');
+      const data = await response.json();
+      throw new Error(data.message || 'Could not delete item.');
     }
 
     window.location.href = 'index.html';
